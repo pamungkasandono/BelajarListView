@@ -1,13 +1,13 @@
 package com.example.listview
 
 import android.content.res.TypedArray
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.AdapterView
-import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.example.listview.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private val dataName = arrayOf(

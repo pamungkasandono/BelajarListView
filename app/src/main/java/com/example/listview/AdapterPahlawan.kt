@@ -5,12 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
-import android.widget.ImageView
-import android.widget.TextView
-import androidx.recyclerview.widget.RecyclerView
-import de.hdodenhof.circleimageview.CircleImageView
+import com.example.listview.databinding.ItemPahlawanBinding
 
 class AdapterPahlawan internal constructor(private val context: Context) : BaseAdapter() {
+
 
     internal var pahlawan = arrayListOf<Pahlawan>()
     override fun getCount(): Int {
@@ -39,14 +37,12 @@ class AdapterPahlawan internal constructor(private val context: Context) : BaseA
     }
 
     private inner class ViewHolder internal constructor(view: View) {
-        private val txtNama: TextView = view.findViewById(R.id.tv_nama)
-        private val txtDeskripsi: TextView = view.findViewById(R.id.tv_deskripsi)
-        private val imgFoto: CircleImageView = view.findViewById(R.id.iv_pahlawan)
+        private val binding = ItemPahlawanBinding.bind(view)
 
         internal fun bind(pahlawan: Pahlawan) {
-            txtNama.text = pahlawan.nama
-            txtDeskripsi.text = pahlawan.deskripsi
-            imgFoto.setImageResource(pahlawan.foto)
+            binding.tvNama.text = pahlawan.nama
+            binding.tvDeskripsi.text = pahlawan.deskripsi
+            binding.ivPahlawan.setImageResource(pahlawan.foto)
         }
     }
 }
